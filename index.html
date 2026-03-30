@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Car Driving Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Difficulty Selection Menu -->
+    <div id="menu-container" class="menu-container">
+        <div class="menu-content">
+            <h1>🏎️ 3D CAR DRIVING GAME 🏎️</h1>
+            <p>Select Difficulty Level to Start</p>
+            
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn easy" onclick="startGame('easy')">
+                    <h2>🟢 EASY</h2>
+                    <p>Relaxed driving, no obstacles</p>
+                </button>
+                
+                <button class="difficulty-btn medium" onclick="startGame('medium')">
+                    <h2>🟡 MEDIUM</h2>
+                    <p>Moderate speed, some obstacles</p>
+                </button>
+                
+                <button class="difficulty-btn hard" onclick="startGame('hard')">
+                    <h2>🔴 HARD</h2>
+                    <p>High speed, many obstacles</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Canvas -->
+    <div id="game-container" class="game-container" style="display: none;">
+        <canvas id="game-canvas"></canvas>
+        
+        <!-- Game UI Overlay -->
+        <div class="game-ui">
+            <div class="game-info">
+                <div class="speed-display">Speed: <span id="speed-value">0</span> km/h</div>
+                <div class="difficulty-display">Difficulty: <span id="difficulty-value">EASY</span></div>
+            </div>
+            
+            <div class="controls-info">
+                <p>🎮 W/↑: Forward | S/↓: Backward | A/←: Left | D/→: Right | SPACE: Brake</p>
+            </div>
+            
+            <button class="menu-btn" onclick="goToMenu()">← Back to Menu</button>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cannon@0.20.0/build/cannon.js"></script>
+    
+    <!-- Game Scripts -->
+    <script src="js/ui.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/car.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
